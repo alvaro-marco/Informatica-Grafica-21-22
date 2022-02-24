@@ -1,11 +1,10 @@
-
 #include "colors.inc"
 #include "woods.inc"
 /*------------------------------------------------------------------------*/
 camera {
     //location <0, 50, 0> //Cenital centrada
     //location <0, 40, -20> //Frontal picada 40
-    location <0, 20, -20> //Frontal picada 20
+    location <30, 20, -20> //Frontal picada 20
     //location <0, 10, -50> //Frontal picada 10
     //location <0, 5, -30> //Frontal picada 5
     //location <0, 3, -20> //Frontal picada 3
@@ -22,7 +21,7 @@ light_source {
     <0, 20, 0>
     color rgb <1, 1, 1>
   }
-/*------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/      
 //Mesa (suelo)
 plane{
     <0,1,0>,0 //Vector normal, distancia
@@ -38,31 +37,36 @@ plane{
 
 /*
 ------------------------------------------Rotando una forma    
-*/  
-#declare Cuenco = object{ 
+*/
+
+#declare CajaMadera = object {
     difference{
-        merge{
-            sor{ // Cuenco
-                8,       
-                <3,0>
-                <2.7,1>
-                <2.5,2.5>
-                <3.5,3.3>
-                <4,4>
-                <4.5,5>
-                <5,6.01>
-                <6,7>
-                pigment{color White}
-            } 
-            torus{
-                4.75,0.25
-                translate <0,6,0>
-                pigment {color White}
+        box {
+            <0,0,0>
+            <10,10,10>
+            texture{
+                pigment{
+                    color
+                }
             }
         }
-        sphere { // Hueco del cuenco    
-            <0,7,0>,    4.7       
-            pigment {color Grey}
-        }                       
+        union{
+            box{
+                <-1,-1,7.5>
+                <11,11,11>
+            }
+            union{
+                sphere{
+                    <5,6,3.75>
+                    3.75
+                }
+                cylinder{
+                    <5,6,3.75>
+                    <5,11,3.75>
+                    1
+                }
+            }
+        }
     }
- }
+}
+object{CajaMadera}
