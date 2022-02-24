@@ -39,55 +39,38 @@ plane{
 ------------------------------------------Rotando una forma    
 */
 
-#declare ContornoBotella = object {
-    sor{
-        11,
-        <0,1>
-        <2,1>
-        <3,1.2>
-        <3.5,2>
-        <3.5,8>
-        <3,8.5>
-        <2,8.6>
-        <1,8.7>
-        <0.75,9>
-        <1.2,9.5>
-        <1,10>
-        texture {
-            pigment{
-                color White
-                filter 0.5
-                transmit 0.2
-            }
-        }
-        finish{
-            phong 5
-        }
-        interior { 
-            ior 1.2
-        }
-        normal {
-            gradient x
-            normal_map {
-                [0.9  marble turbulence 0 scale 5]
-            }
-        }
-    }
-}
-
-#declare Botella = object{
+#declare CajaMadera = object {
     difference{
-        object{ContornoBotella}
-        union{
-            object{
-                ContornoBotella
-                scale <0.9,0.9,0.9>
+        box {
+            <0,0,0>
+            <10,10,10>
+            texture {
+                T_Wood9
             }
-            cylinder{
-                <0,7,0>
-                <0,11,>
-                0.72
+        }
+        union{
+            box{
+                <-1,-1,7.5>
+                <11,11,11>
+            }
+            union{
+                sphere{
+                    <5,5.2,3.75>
+                    5
+                    texture {
+                        T_Wood9
+                    }
+                }
+                cylinder{
+                    <5,6,3.75>
+                    <5,11,3.75>
+                    2
+                    texture {
+                        T_Wood9
+                    }
+                }
             }
         }
     }
 }
+object{CajaMadera}

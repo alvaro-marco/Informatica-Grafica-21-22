@@ -46,7 +46,7 @@ plane{
             <10,10,10>
             texture{
                 pigment{
-                    color
+                    color Yellow
                 }
             }
         }
@@ -57,13 +57,23 @@ plane{
             }
             union{
                 sphere{
-                    <5,6,3.75>
-                    3.75
+                    <5,5.2,3.75>
+                    5
+                    texture{
+                        pigment{
+                            color Orange
+                        }
+                    }
                 }
                 cylinder{
                     <5,6,3.75>
                     <5,11,3.75>
                     1
+                    texture{
+                        pigment{
+                            color Red
+                        }
+                    }
                 }
             }
         }

@@ -65,4 +65,6 @@ plane{
             pigment {color Grey}
         }                       
     }
- }
+ } 
+ 
+ object{Cuenco}
