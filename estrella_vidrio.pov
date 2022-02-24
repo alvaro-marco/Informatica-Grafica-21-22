@@ -4,7 +4,7 @@
 
 
 camera {
-	location < -10, 20, -20>
+	location < -10, 5, -20>
 	look_at < 0.0, 0.0, 0.0>
 }
 
@@ -75,16 +75,31 @@ prism {
 }
 
 difference {
-	union{
-		object{Estrella1}
-		object{Estrella2}
-		object{Estrella3}
+	object{
+		union{
+			object{Estrella1}
+			object{Estrella2}
+			object{Estrella3}
+		}
 	}
 	object{Agujero}
 	texture {
 		pigment{
-			color Blue
-			//color Col_Glass_Bluish
+			color White
+			filter 0.5
+			transmit 0.2
+		}
+	}
+	finish{
+		phong 5
+	}
+	interior { 
+		ior 1.5
+	}
+	normal {
+		gradient x
+		normal_map {
+			[0.9  marble turbulence 0.5 scale 5]
 		}
 	}
 }
