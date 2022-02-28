@@ -3,8 +3,8 @@
 /*------------------------------------------------------------------------*/
 camera {
     //location <0, 50, 0> //Cenital centrada
-    //location <0, 40, -20> //Frontal picada 40
-    location <30, 20, -20> //Frontal picada 20
+    location <0, 40, -20> //Frontal picada 40
+    //location <30, 20, -10> //Frontal picada 20
     //location <0, 10, -50> //Frontal picada 10
     //location <0, 5, -30> //Frontal picada 5
     //location <0, 3, -20> //Frontal picada 3
@@ -20,8 +20,8 @@ light_source {
 light_source {
     <0, 20, 0>
     color rgb <1, 1, 1>
-  }   */
-/*------------------------------------------------------------------------     
+  }            */
+/*------------------------------------------------------------------------      
 //Mesa (suelo)
 plane{
     <0,1,0>,0 //Vector normal, distancia
@@ -38,39 +38,37 @@ plane{
 
 ------------------------------------------Rotando una forma    
 */
-
-#declare CajaMadera = object {
-    difference{
-        box {
-            <0,0,0>
-            <10,10,10>
-            texture{
-                T_Wood23 //7
-            }
-        }
-        union{
-            box{
-                <-1,-1,7.5>
-                <11,11,11>
-            }
-            union{
-                sphere{
-                    <5,5.2,3.75>
-                    5
-                    texture{
-                        T_Wood23
-                    }
-                }
-                cylinder{
-                    <5,6,3.75>
-                    <5,11,3.75>
-                    1
-                    texture{
-                        T_Wood23
-                    }
-                }
+#declare Baston = object{
+    cylinder {
+        <0,0,0>
+        <0,20,0>
+        0.1
+        texture{
+            pigment{
+                color Green
             }
         }
     }
+}    
+#declare Huele = object {
+    union{
+        union{
+            object {
+                Baston
+                translate <0,0,1>
+                rotate <-10,100,0>
+            }
+            object {
+                Baston
+                translate <0,0,-1>
+                rotate <10,75,0>
+            }
+        }
+        object {
+            Baston
+            translate <0,0,-2>
+            rotate <15,0,0>
+        }
+    }
 }
-//object{CajaMadera}
+//object {Huele}
