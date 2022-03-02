@@ -15,7 +15,7 @@ camera {
     
     look_at <0, 2, 0>
 }
-/*------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------
 light_source {
     <0, 2, -20>
     color rgb <1, 1, 1>
@@ -25,7 +25,7 @@ light_source {
     color rgb <1, 1, 1>
 }
 
-/*------------------------------------------------------------------------*/      
+//------------------------------------------------------------------------     
 //Mesa (suelo)
 plane{
     <0,1,0>,0 //Vector normal, distancia
@@ -39,14 +39,19 @@ plane{
     pigment{color Blue}
 }  
 
-/*
-------------------------------------------Rotando una forma    
+
+//------------------------------------------Rotando una forma    
 */
+#declare Ambientador = object {
+    union{
+        object{Botella}          
+        object{
+            CajaMadera
+            translate <-5,0,-3.5>
+        }   
+    }                                                           
+}
 
-object{Botella}          
+//object {Ambientador}
 
-object{
-    CajaMadera
-    translate <-5,0,-3.5>
 
-}                                                           

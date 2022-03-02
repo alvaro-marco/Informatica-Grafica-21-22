@@ -1,6 +1,5 @@
 #include "colors.inc"
 #include "woods.inc"     
-#include "Botella.pov"
 #include "Cuenco.pov"
 #include "Ambientador.pov"
 /*------------------------------------------------------------------------*/
@@ -39,3 +38,10 @@ plane{
     pigment{color Blue}
 }  
 /*------------------------------------------------------------------------*/ 
+object{Ambientador
+    translate <0,0,0>
+}
+
+object{Cuenco
+    translate <10,-2,-10>
+}
