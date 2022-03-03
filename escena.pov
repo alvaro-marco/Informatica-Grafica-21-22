@@ -6,21 +6,26 @@ global_settings {
 	}
 }
 
-sky_sphere {
-	pigment {
-		gradient y
-		color_map {
-			[ 0.5  color CornflowerBlue ]
-			[ 1.0  color MidnightBlue ]
-		}
-		scale 2
-		translate -1
-	}
-	emission rgb <0.8,0.8,1>
-}
-
 camera {
 	location < -5, 10, -20>
 	look_at < 0.0, 0.0, 0.0>
 	right <image_width/image_height,0,0>
+}
+
+plane {
+	<0, 1, 0>, 0	
+		texture {
+			pigment{
+				color White
+			}
+		}
+}
+
+light_source {
+	< 0, 100, 100>
+	color rgb <1, 1, 1>
+	photons{
+		reflection on
+		refraction on
+	}
 }
