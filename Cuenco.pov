@@ -13,7 +13,8 @@ camera {
     
     look_at <0, 2, 0>
 }
-/*------------------------------------------------------------------------
+/*
+//------------------------------------------------------------------------
 light_source {
     <0, 2, -10>
     color rgb <1, 1, 1>
@@ -22,7 +23,7 @@ light_source {
     <0, 20, 0>
     color rgb <1, 1, 1>
   }
-------------------------------------------------------------------------
+//------------------------------------------------------------------------
 //Mesa (suelo)
 plane{
     <0,1,0>,0 //Vector normal, distancia
@@ -37,8 +38,17 @@ plane{
 }  
 
 
-------------------------------------------Rotando una forma    
-*/  
+//------------------------------------------Rotando una forma    
+
+global_settings {
+	photons {
+    	count 500000
+    	autostop 0
+    	jitter .4
+	}
+}
+*/ 
+  
 #declare Cuenco = object{ 
     difference{
         merge{
@@ -52,17 +62,74 @@ plane{
                 <4.5,5>
                 <5,6.01>
                 <6,7>
-                pigment{color White}
+                pigment{
+                    color White
+                }
+                finish{
+                    phong 1
+                }
+                interior { 
+                    ior 1
+                }
+                photons{
+                    target
+                    reflection on
+                    refraction on
+                }
+                normal {
+                    gradient x
+                    normal_map {
+                        [0.9  marble turbulence 0.1 scale 5]
+                    }
+                }     
             } 
             torus{
                 4.75,0.25
                 translate <0,6,0>
-                pigment {color White}
+                pigment{
+                    color White
+                }
+                finish{
+                    phong 1
+                }
+                interior { 
+                    ior 1
+                }
+                photons{
+                    target
+                    reflection on
+                    refraction on
+                }
+                normal {
+                    gradient x
+                    normal_map {
+                        [0.9  marble turbulence 0.1 scale 5]
+                    }
+                }  
             }
         }
         sphere { // Hueco del cuenco    
             <0,7,0>,    4.7       
-            pigment {color Grey}
+            pigment{
+                color Grey
+            }
+            finish{
+                phong 1
+            }
+            interior { 
+                ior 1
+            }
+            photons{
+                target
+                reflection on
+                refraction on
+            }
+            normal {
+                gradient x
+                normal_map {
+                    [0.9  marble turbulence 0.1 scale 5]
+                }
+            }  
         }                       
     }
  } 
