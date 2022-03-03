@@ -1,5 +1,6 @@
 #include "colors.inc"
 #include "woods.inc"
+#include "textures.inc"
 #include "Bastones.pov"
 /*------------------------------------------------------------------------*/
 camera {
@@ -62,7 +63,7 @@ plane{
 
 #declare Liquido = object{
     cylinder{
-        <0,1.5,0>
+        <0,2,0>
         <0,3,0>
         3.2
         texture{
