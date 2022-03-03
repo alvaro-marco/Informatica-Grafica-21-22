@@ -55,23 +55,7 @@ plane{
         <1.2,9.5>
         <1,10>
         texture {
-            pigment{
-                color White
-                filter 0.5
-                transmit 0.2
-            }
-        }
-        finish{
-            phong 5
-        }
-        interior { 
-            ior 1.2
-        }
-        normal {
-            gradient x
-            normal_map {
-                [0.9  marble turbulence 0 scale 5]
-            }
+            Glass3
         }
     }
 }  
