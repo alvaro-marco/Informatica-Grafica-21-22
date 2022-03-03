@@ -2,8 +2,6 @@
 #include "glass.inc"
 #include "Rand.inc"
 
-//#include "escena.pov"
-
 #macro MakeGlassSphere(loc, rad)
 sphere {
 	loc, rad
