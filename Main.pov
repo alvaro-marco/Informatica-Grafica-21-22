@@ -43,7 +43,7 @@ camera {
     
     look_at <0, 6, 0>                            
     
-	right <image_width/image_height,0,0>
+	right <1,0,0>
 	angle 30
 }
 /*------------------------------------------------------------------------*/
@@ -93,4 +93,3 @@ object{
 	rotate <0, 30, 0>
 	translate <-6, 0, 17>	
 }
-
