@@ -39,11 +39,11 @@ camera {
     //location <0, 3, -20> //Frontal picada 3
     //location <0, 0, -20> //Frontal normal
     
-    location <10, 50, -80>
+    location <10, 50, -180>
     
     look_at <0, 6, 0>                            
     
-	right <1,0,0>
+	right <image_width/image_height,0,0>
 	angle 30
 }
 /*------------------------------------------------------------------------*/
@@ -85,11 +85,12 @@ object{Cuenco
 object{
 	BolaVidrio
 	scale 1.1
-	translate <-8, 0, -8>	
+	translate <-7, 0, -7>	
 }
 object{
 	EstrellaVidrio
 	scale <1.3,1.7,1.3>
 	rotate <0, 30, 0>
-	translate <-6, 0, 17>	
+	translate <-6, 0, 15>	
 }
+
