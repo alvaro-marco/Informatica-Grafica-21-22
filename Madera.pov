@@ -43,9 +43,9 @@ plane{
     difference{
         box {
             <0,0,0>
-            <10,10,10>
+            <10,9.9,10>
             texture{
-                T_Wood23 //7
+                T_Wood23
             }
         }
         union{

@@ -71,6 +71,9 @@ plane{
                 color Cyan
             }
         }
+        finish{
+            reflection .1
+        }
     }
 }
 #declare BotellaSinAgua = object{
@@ -86,6 +89,9 @@ plane{
                 <0,11,>
                 0.72
             }
+        }
+        finish{
+            reflection .02
         }
     }
 }

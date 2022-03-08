@@ -11,6 +11,9 @@ sphere {
 			filter 0.7
 			transmit 0.2
 		}
+	}  
+	finish{
+	    reflection .05   
 	}
 }
 #end
@@ -38,7 +41,7 @@ sphere {
 		#end
 
 		finish{
-			phong 0.4
+			phong 0.4     
 		}
 		photons{
 			target

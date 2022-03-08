@@ -66,7 +66,8 @@ global_settings {
                     color White
                 }
                 finish{
-                    phong 1
+                    phong 1 
+                    reflection .4
                 }
                 interior { 
                     ior 1
@@ -90,7 +91,8 @@ global_settings {
                     color White
                 }
                 finish{
-                    phong 1
+                    phong 15  
+                    reflection .02
                 }
                 interior { 
                     ior 1
@@ -115,6 +117,7 @@ global_settings {
             }
             finish{
                 phong 1
+                reflection .02
             }
             interior { 
                 ior 1

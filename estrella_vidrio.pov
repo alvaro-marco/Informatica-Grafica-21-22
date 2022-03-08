@@ -2,6 +2,8 @@
 #include "glass.inc"
 #include "Rand.inc"
 
+//#include "escena.pov"
+
 #macro MakeStar(rad, bevel, height)
 	prism {
 		linear_sweep 
@@ -103,5 +105,8 @@
 				[0.9  marble turbulence 0.5 scale 5]
 			}
 		}
-	}
+        finish{
+            reflection .02
+        }
+    }
 }
