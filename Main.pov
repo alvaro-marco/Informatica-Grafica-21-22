@@ -39,11 +39,12 @@ camera {
     //location <0, 3, -20> //Frontal picada 3
     //location <0, 0, -20> //Frontal normal
     
-    location <10, 50, -180>
+    location <10, 50, -80>
     
     look_at <0, 6, 0>                            
     
-	right <image_width/image_height,0,0>
+	right <1/1,0,0>
+	//right <image_width/image_height,0,0>
 	angle 30
 }
 /*------------------------------------------------------------------------*/
